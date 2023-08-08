@@ -1,11 +1,14 @@
 import React from 'react'
 import Options from './Options'
-function Questions({ questions, dispatch, answer }) {
-    console.log(questions)
+import { useQuiz } from '../context/QuizContext'
+function Questions() {
+    const { questions, index } = useQuiz();
+    const question = questions.at(index);
+    console.log(question)
     return (
         <div>
-            <h4>{questions.question}</h4>
-            <Options question={questions} dispatch={dispatch} answer={answer} />
+            <h4>{question.question}</h4>
+            <Options question={question} />
         </div>
     )
 }

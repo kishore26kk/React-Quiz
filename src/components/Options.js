@@ -1,6 +1,10 @@
 import React from 'react'
+import { useQuiz } from '../context/QuizContext'
 
-function Options({ question, dispatch, answer }) {
+function Options({ question }) {
+    console.log(question)
+    const { answer, dispatch } = useQuiz();
+
     const hasAnswered = answer !== null
     return (
         <div className="options">
@@ -14,8 +18,8 @@ function Options({ question, dispatch, answer }) {
                 >{options}
                 </button>))
             }
-        </div >
+        </div>
     )
 }
 
-export default Options
+export default Options  
