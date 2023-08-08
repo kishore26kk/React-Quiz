@@ -16,7 +16,7 @@ const Seconds_per_question = 30;
 
 function reducer(state, action) {
     switch (action.type) {
-        case "dataReceived":
+        case "dataReceived": 
             return {
                 ...state,
                 questions: action.payload,
